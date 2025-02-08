@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Computer Vision Miscellaneous Utilities Module 1.0.1
+# # Computer Vision Miscellaneous Utilities Module 1.0.2
 # #### Made by: Melchor Filippe S. Bulanon
-# #### Last Updated: 02/07/2025
+# #### Last Updated: 02/08/2025
 # 
 # This module contains miscellaneous functions that could be used for computer vision models created in pytorch.
 
@@ -14,7 +14,6 @@
 
 import torch
 from torch.utils.data import Dataset
-import matplotlib.pyplot as plt
 import numpy as np
 from typing import Optional, Tuple
 import random
@@ -24,6 +23,28 @@ import subprocess
 import sys
 
 
+# In[ ]:
+
+
+if importlib.util.find_spec('matplotlib') is None:
+    print(f"{'matplotlib'} is not installed. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'matplotlib'])
+    print(f"{'matplotlib'} has been installed.")
+
+import matplotlib.pyplot as plt
+
+
+# In[ ]:
+
+
+if importlib.util.find_spec('kagglehub') is None:
+    print(f"{'kagglehub'} is not installed. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'kagglehub'])
+    print(f"{'kagglehub'} has been installed.")
+
+import kagglehub
+
+
 # In[7]:
 
 
@@ -31,8 +52,6 @@ if importlib.util.find_spec('anytree') is None:
     print(f"{'anytree'} is not installed. Installing...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", 'anytree'])
     print(f"{'anytree'} has been installed.")
-else:
-    print(f"{'anytree'} is already installed.")
 
 from anytree import Node, RenderTree
 
@@ -173,16 +192,4 @@ def inspect_data(dir_path):
     root_node = _build_tree(dir_path)
     for pre, _, node in RenderTree(root_node):
         print(f"{pre}{node.name}")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

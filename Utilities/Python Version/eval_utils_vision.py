@@ -1,13 +1,40 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Computer Vision Evaluation Utilities Module 1.0.0
+# # Computer Vision Evaluation Utilities Module 1.0.1
 # #### Made by: Melchor Filippe S. Bulanon
-# #### Last Updated: 02/02/2025
+# #### Last Updated: 02/08/2025
 # 
 # This module contains all the functions necessary to evaluate computer vision models created in pytorch.
 
 # ## Import necessary modules
+
+# In[ ]:
+
+
+if importlib.util.find_spec('torchmetrics') is None:
+    print(f"{'torchmetrics'} is not installed. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'torchmetrics'])
+    print(f"{'torchmetrics'} has been installed.")
+
+
+# In[ ]:
+
+
+if importlib.util.find_spec('seaborn') is None:
+    print(f"{'seaborn'} is not installed. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'seaborn'])
+    print(f"{'seaborn'} has been installed.")
+
+
+# In[ ]:
+
+
+if importlib.util.find_spec('scikit-learn') is None:
+    print(f"{'scikit-learn'} is not installed. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'scikit-learn'])
+    print(f"{'scikit-learn'} has been installed.")
+
 
 # In[ ]:
 
