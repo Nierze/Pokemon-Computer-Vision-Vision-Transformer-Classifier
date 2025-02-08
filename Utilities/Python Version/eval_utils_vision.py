@@ -12,6 +12,14 @@
 # In[ ]:
 
 
+import importlib
+import subprocess
+import sys
+
+
+# In[ ]:
+
+
 if importlib.util.find_spec('torchmetrics') is None:
     print(f"{'torchmetrics'} is not installed. Installing...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", 'torchmetrics'])

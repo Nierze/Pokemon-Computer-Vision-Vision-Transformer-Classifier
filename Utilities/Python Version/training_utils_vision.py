@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Computer Vision Training Utilities Module 1.0.0
+# # Computer Vision Training Utilities Module 1.0.1
 # #### Made by: Melchor Filippe S. Bulanon
-# #### Last Updated: 02/02/2025
+# #### Last Updated: 02/08/2025
 # 
 # This module contains all the functions necessary to train computer vision models created in pytorch.
 
@@ -22,7 +22,7 @@ from typing import Dict, List, Tuple
 
 # ## Train Step Function
 
-# In[2]:
+# In[ ]:
 
 
 def train_step(
@@ -46,6 +46,7 @@ def train_step(
         Average loss over all batches in the epoch
     """
     model.train()
+    model = model.to(device)
     total_loss = 0.0
     total_samples = 0
 
