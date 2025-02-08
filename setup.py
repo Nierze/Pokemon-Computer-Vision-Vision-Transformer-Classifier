@@ -145,7 +145,6 @@ common_requirements = [
     'Pygments==2.18.0',
     'pynvml==12.0.0',
     'pyparsing==3.2.0',
-    'pypiwin32==223',
     'python-dateutil==2.9.0.post0',
     'python-dotenv==1.0.1',
     'python-json-logger==2.0.7',
@@ -216,6 +215,7 @@ windows_requirements = [
     'tensorboard-data-server==0.7.2',
     'tensorflow==2.18.0',
     'tensorflow-io-gcs-filesystem==0.31.0',
+    'pypiwin32==223',
 ]
 
 # Linux-only dependencies (if any)
@@ -227,11 +227,10 @@ linux_requirements = [
 
 
 # Combine all requirements with environment markers
-install_requires = common_requirements + windows_requirements + linux_requirements
+install_requires = common_requirements + windows_requirements if os.name == 'nt' else common_requirements + linux_requirements
 
 setup(
-    name="your_package_name",
+    name="AI Environment",
     version="0.1",
-    packages=["your_package"],
     install_requires=install_requires,
 )
